@@ -14,7 +14,7 @@ bluetui
 bolt
 brightnessctl
 btop
-chromium
+zen-browser-bin
 clang
 claude-code
 cups
@@ -90,7 +90,6 @@ nss-mdns
 nvim
 obs-studio
 obsidian
-omarchy-nvim
 omarchy-walker
 pamixer
 pinta
