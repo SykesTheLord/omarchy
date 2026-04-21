@@ -59,9 +59,7 @@ wget
 yay-debug
 tuxedo-drivers-nocompatcheck-dkms
 yt6801-dkms
-zen-browser-bin
 zram-generator
-zsh
 obsidian-bin
 
 # Vulkan drivers (auto-detected by hardware)
