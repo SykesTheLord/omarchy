@@ -8,6 +8,10 @@ base-devel
 broadcom-wl
 btrfs-progs
 dart
+dotnet-sdk-10.0
+dotnet-runtime-10.0
+dotnet-sdk-8.0
+dotnet-runtime-8.0
 dkms
 egl-wayland
 git
@@ -30,6 +34,8 @@ limine-snapper-sync
 linux
 linux-firmware
 linux-headers
+linux-zen
+linux-zen-headers
 linux-ptl
 linux-ptl-headers
 macbook12-spi-driver-dkms
@@ -53,7 +59,10 @@ wget
 yay-debug
 tuxedo-drivers-nocompatcheck-dkms
 yt6801-dkms
+zen-browser-bin
 zram-generator
+zsh
+obsidian-bin
 
 # Vulkan drivers (auto-detected by hardware)
 vulkan-intel
