@@ -21,22 +21,29 @@ map("n", "<leader>u",  require("undotree").toggle, { noremap = true, silent = tr
 map("n", "<leader>uo", require("undotree").open,   { noremap = true, silent = true })
 map("n", "<leader>uc", require("undotree").close,  { noremap = true, silent = true })
 
--- Snippet navigation (vim.snippet, replaces LuaSnip Tab/S-Tab)
+-- Snippet navigation + completion cycling (vim.snippet, built-in completion)
 map({ 'i', 's' }, '<Tab>', function()
-    if vim.snippet.active({ direction = 1 }) then
+    if vim.fn.pumvisible() == 1 then
+        return '<C-n>'
+    elseif vim.snippet.active({ direction = 1 }) then
         return '<Cmd>lua vim.snippet.jump(1)<CR>'
     end
     return '<Tab>'
-end, { expr = true, desc = "Snippet: jump forward or Tab" })
+end, { expr = true, desc = "Next completion / snippet forward / Tab" })
 
 map({ 'i', 's' }, '<S-Tab>', function()
-    if vim.snippet.active({ direction = -1 }) then
+    if vim.fn.pumvisible() == 1 then
+        return '<C-p>'
+    elseif vim.snippet.active({ direction = -1 }) then
         return '<Cmd>lua vim.snippet.jump(-1)<CR>'
     end
     return '<S-Tab>'
-end, { expr = true, desc = "Snippet: jump back or S-Tab" })
+end, { expr = true, desc = "Prev completion / snippet back / S-Tab" })
 
 -- Confirm completion item with Enter (built-in completion)
 map('i', '<CR>', function()
     return vim.fn.pumvisible() == 1 and '<C-y>' or '<CR>'
 end, { expr = true, desc = "Confirm completion or newline" })
+
+-- Exit terminal insert mode
+map('t', '<Esc>', '<C-\\><C-n>', { desc = "Exit terminal mode" })

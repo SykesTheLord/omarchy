@@ -17,8 +17,27 @@ local function on_attach(client, bufnr)
 	bufmap("n", "<leader>e", vim.diagnostic.open_float, "Show Diagnostics")
 	bufmap("n", "<leader>q", vim.diagnostic.setloclist, "Diagnostics to LocList")
 
-	-- Enable built-in LSP completion for this buffer
-	vim.lsp.completion.enable(true, client.id, bufnr, { autotrigger = true })
+	-- LSP completion via omnifunc (reliable across all Neovim 0.11+ versions)
+	vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+	bufmap('i', '<C-Space>', '<C-x><C-o>', "Trigger LSP completion")
+
+	-- Auto-trigger: fire omnifunc 150 ms after the last keystroke
+	local _timer = assert(vim.uv.new_timer())
+	vim.api.nvim_create_autocmd("TextChangedI", {
+		buffer = bufnr,
+		callback = function()
+			_timer:stop()
+			_timer:start(150, 0, vim.schedule_wrap(function()
+				if vim.fn.pumvisible() == 0 then
+					vim.api.nvim_feedkeys(
+						vim.api.nvim_replace_termcodes('<C-x><C-o>', true, false, true),
+						'n', false
+					)
+				end
+			end))
+		end,
+		desc = "Auto-trigger LSP completion",
+	})
 
 	-- Format on save (if server supports it)
 	if client.server_capabilities and client.server_capabilities.documentFormattingProvider then

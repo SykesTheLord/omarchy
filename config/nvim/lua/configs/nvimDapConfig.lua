@@ -65,7 +65,7 @@ dap.configurations.java = {
 dap.adapters.cppdbg = {
   id = 'cppdbg',
   type = 'executable',
-  command = vim.fn.stdpath("data")..'/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  command = '/home/jacob/.local/share/nvim/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
 }
 
 
@@ -106,3 +106,5 @@ map('n', '<F11>',      function() require('dap').step_into() end,   { desc = "DA
 map('n', '<F12>',      function() require('dap').step_out() end,    { desc = "DAP Step Out" })
 map('n', '<leader>dr', function() require('dap').repl.open() end,   { desc = "DAP REPL" })
 map('n', '<leader>du', function() require('dapui').toggle() end,    { desc = "DAP UI Toggle" })
+
+
