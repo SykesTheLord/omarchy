@@ -25,6 +25,10 @@ docker
 docker-buildx
 docker-compose
 dotnet-runtime-9.0
+dotnet-sdk-10.0
+dotnet-runtime-10.0
+dotnet-sdk-8.0
+dotnet-runtime-8.0
 dust
 evince
 exfatprogs
@@ -91,6 +95,9 @@ nvim
 obs-studio
 obsidian
 omarchy-walker
+jdk25-openjdk
+jdk21-openjdk
+jdk-openjdk
 pamixer
 pinta
 playerctl

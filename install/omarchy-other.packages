@@ -8,10 +8,6 @@ base-devel
 broadcom-wl
 btrfs-progs
 dart
-dotnet-sdk-10.0
-dotnet-runtime-10.0
-dotnet-sdk-8.0
-dotnet-runtime-8.0
 dkms
 egl-wayland
 git
@@ -60,7 +56,6 @@ yay-debug
 tuxedo-drivers-nocompatcheck-dkms
 yt6801-dkms
 zram-generator
-obsidian-bin
 
 # Vulkan drivers (auto-detected by hardware)
 vulkan-intel
