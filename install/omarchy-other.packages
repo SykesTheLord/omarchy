@@ -30,8 +30,6 @@ limine-snapper-sync
 linux
 linux-firmware
 linux-headers
-linux-zen
-linux-zen-headers
 linux-ptl
 linux-ptl-headers
 macbook12-spi-driver-dkms
