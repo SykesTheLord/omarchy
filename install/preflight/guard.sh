@@ -26,9 +26,11 @@ if [[ $(uname -m) != "x86_64" ]]; then
   abort "x86_64 CPU"
 fi
 
-# Must have secure boot disabled
+# Must have secure boot disabled or in setup mode (keys not yet enrolled)
 if bootctl status 2>/dev/null | grep -q 'Secure Boot: enabled'; then
-  abort "Secure Boot disabled"
+  if ! bootctl status 2>/dev/null | grep -q 'Setup Mode: enabled'; then
+    abort "Secure Boot disabled or in Setup Mode"
+  fi
 fi
 
 # Must not have Gnome or KDE already install

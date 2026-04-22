@@ -25,6 +25,10 @@ docker
 docker-buildx
 docker-compose
 dotnet-runtime-9.0
+dotnet-sdk-10.0
+dotnet-runtime-10.0
+dotnet-sdk-8.0
+dotnet-runtime-8.0
 dust
 evince
 exfatprogs
@@ -90,8 +94,10 @@ nss-mdns
 nvim
 obs-studio
 obsidian
-omarchy-nvim
 omarchy-walker
+jdk25-openjdk
+jdk21-openjdk
+jdk-openjdk
 pamixer
 pinta
 playerctl
@@ -108,6 +114,7 @@ ripgrep
 ruby
 rust
 satty
+sbctl
 sddm
 signal-desktop
 slurp
@@ -144,4 +151,6 @@ xmlstarlet
 xournalpp
 yaru-icon-theme
 yay
+zen-browser-bin
 zoxide
+zsh
