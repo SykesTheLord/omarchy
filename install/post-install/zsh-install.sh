@@ -10,7 +10,7 @@ sudo chsh -s /usr/bin/zsh "$USER"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
 git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 
-wget -q -O "$HOME/.zshrc" https://raw.githubusercontent.com/SykesTheLord/DotFiles/refs/heads/main/arch/.zshrc
+cp "$OMARCHY_PATH/default/zshrc" "$HOME/.zshrc"
 
 # Link themed zsh theme (config/theme.sh already ran omarchy-theme-set, so the file exists)
 ln -snf ~/.config/omarchy/current/theme/sykes_custom_theme.zsh-theme ~/.oh-my-zsh/themes/sykes_custom_theme.zsh-theme
