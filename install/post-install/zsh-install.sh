@@ -1,14 +1,12 @@
-# Install Oh My Zsh
-wget -q -O /tmp/omz-install.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-bash /tmp/omz-install.sh --unattended --keep-zshrc --skip-chsh
-rm -f /tmp/omz-install.sh
+# Install Oh My Zsh from bundled vendor copy
+cp -r "$OMARCHY_PATH/vendor/oh-my-zsh" "$HOME/.oh-my-zsh"
 
-# Make zsh the login shell (omz was run with --skip-chsh)
+# Make zsh the login shell
 sudo chsh -s /usr/bin/zsh "$USER"
 
-# Install Oh My Zsh plugins
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-git clone https://github.com/zsh-users/zsh-autosuggestions "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+# Install plugins from bundled vendor copies
+cp -r "$OMARCHY_PATH/vendor/zsh-syntax-highlighting" "$HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+cp -r "$OMARCHY_PATH/vendor/zsh-autosuggestions" "$HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
 
 cp "$OMARCHY_PATH/default/zshrc" "$HOME/.zshrc"
 
